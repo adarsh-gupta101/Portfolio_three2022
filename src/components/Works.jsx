@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import xri from "../assets/Clients/xri.jpg";
 import ma2grg from "../assets/Clients/ma2grg.jpg";
 import mages from "../assets/Clients/mages.jpg";
 import threejs from "../assets/Clients/threejs.jpg";
 import trend from "../assets/Clients/trend.jpg";
 import Victual from "../assets/Clients/victual.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const dataForWork = [
   {
@@ -53,43 +55,65 @@ const dataForWork = [
 ];
 
 function Works() {
+  useEffect(() => {
+    AOS.init();
+  });
+
   return (
     <div>
-      <section className='text-white '>
-        <h2 className='text-blue-400  text-7xl m-2 p-2'>My Portfolio</h2>
-        <p className="m-2 p-2 font-light">
+      <section className='text-white mt-16'>
+        <h2 className='text-blue-400 font-bold flex text-7xl m-2 p-2'>
+          <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>M</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>Y</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'> </p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>P</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>O</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>R</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>T</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>F</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>O</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>L</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>I</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>O</p>
+        </h2>
+        <p className='m-2 p-2 font-light '>
           A small gallery of projects that I have made. Got some opportunities
-          to work with amazing people around the globe. I am always open to 
-            new opportunities. If you have any project in mind, feel free to
-            contact me.
+          to work with amazing people around the globe. I am always open to new
+          opportunities. If you have any project in mind, feel free to contact
+          me.
         </p>
         <article className='grid md:grid-cols-3 gap-4'>
           {dataForWork.map((Work) => {
             return (
-              <div className=' hover:skew-x-1 hover:scale-105 hover:hue-rotate-180	 hue-rotate-0	 shadow-xl h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
-                <a href={Work.link} target='_blank' rel='noreferrer' className="">
-                    <div className="flex flex-col">
-                  <img src={Work.image} className=""/>
-                  <p className='text-xl mt-4'>{Work.title}</p>
-                  <p className='text-sm font-light'>{Work.description}</p>
-                  <div className='flex items-center mt-4'>
-                    {/* <img
+              <div
+                data-aos='zoom-up-right'
+                data-aos-duration='3000'
+                className=' hover:skew-x-1 hover:scale-105 hover:hue-rotate-180	 hue-rotate-0	 shadow-xl h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
+                <a
+                  href={Work.link}
+                  target='_blank'
+                  rel='noreferrer'
+                  className=''>
+                  <div className='flex flex-col'>
+                    <img src={Work.image} className='' />
+                    <p className='text-xl mt-4'>{Work.title}</p>
+                    <p className='text-sm font-light'>{Work.description}</p>
+                    <div className='flex items-center mt-4'>
+                      {/* <img
                       src='https://pbs.twimg.com/profile_images/1505853495941169152/Gd3D-b_u_400x400.jpg'
                       className='rounded-full w-12 h-12 my-2'
                     /> */}
-                    {/* <p className='mx-2 flex flex-col-reverse'>
+                      {/* <p className='mx-2 flex flex-col-reverse'>
                       <span className='text-gray-200 text-sm'>{Work.time}</span>
                       Adarsh Gupta
                     </p> */}
-                  </div>
+                    </div>
                   </div>
                 </a>
               </div>
             );
           })}
         </article>
-
-       
       </section>
     </div>
   );
