@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import xri from "../assets/Clients/xri.jpg";
 import ma2grg from "../assets/Clients/ma2grg.jpg";
 import mages from "../assets/Clients/mages.jpg";
-import threejs from "../assets/Clients/threejs.jpg";
+import three from "../assets/Clients/three.jpg";
 import trend from "../assets/Clients/trend.jpg";
 import Victual from "../assets/Clients/victual.jpg";
 import AOS from "aos";
@@ -50,7 +50,7 @@ const dataForWork = [
       "Three.JS based visual experience of the universe- the solar system. A simple side project to understand WebGL and digging deeper into it",
     image: "../assets/clients/xri.jpg",
     link: "https://startling-entremet-4cf784.netlify.app/",
-    image: threejs,
+    image: three,
   },
 ];
 
