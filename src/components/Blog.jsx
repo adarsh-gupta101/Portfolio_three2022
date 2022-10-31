@@ -73,7 +73,17 @@ function Blog() {
   return (
     <div>
       <section className='text-white '>
-        <h2 className='text-white text-5xl font-bold md:text-7xl m-2 my-8 p-2'>Writings</h2>
+      <h2 className='text-pink-400 font-bold flex text-5xl md:text-7xl m-2 p-2'>
+
+        <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>W</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>R</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>I</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>T</p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>I</p>
+            <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>N</p>
+            <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>G</p>
+
+        </h2>
         <article className='flex flex-wrap justify-around'>
           {dataForBlog.map((blog) => {
             return (
@@ -98,7 +108,7 @@ function Blog() {
           })}
         </article>
 
-        <a href="medium.com/@adarsh-gupta"><p className="text-center mt-28 border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-2xl shadow-blue-300">Check All of Adarsh Gupta's blog</p></a>
+        <a href="https://medium.com/@adarsh-gupta"><p className="text-center mt-28 border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-2xl shadow-blue-300">Check All of Adarsh Gupta's blog</p></a>
       </section>
     </div>
   );

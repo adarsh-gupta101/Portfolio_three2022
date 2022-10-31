@@ -65,7 +65,7 @@ function Works() {
         <h2 className='text-blue-400 font-bold flex text-5xl md:text-7xl m-2 p-2'>
           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>M</p>
            <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>Y</p>
-           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'> </p>
+           <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>{" "}</p>
            <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>P</p>
            <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>O</p>
            <p className='hover:animate-bounce hover:translate-x-1	 duration-500 hover:skew-y-12	hover:scale-50 delay-100	'>R</p>
@@ -86,9 +86,9 @@ function Works() {
           {dataForWork.map((Work) => {
             return (
               <div 
-                data-aos='zoom-up-right'
+                data-aos='fade-right'
                 data-aos-duration='3000'
-                className=' hover:skew-x-1 hover:scale-105 hover:hue-rotate-180	 hue-rotate-0	 shadow-xl h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
+                className=' hover:skew-x-1 hover:scale-105 hover:hue-rotate-180	 hue-rotate-0	 shadow-2xl h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
                 <a
                   href={Work.link}
                   target='_blank'
