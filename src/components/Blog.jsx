@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import RSS_API from "../../apikey";
 const dataForBlog = [
   {
     title: "How To Style And Write CSS In React",
@@ -60,7 +59,7 @@ function Blog() {
     // const fetchd = () => {
       axios
         .get(
-          `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@adarsh-gupta&api_key=${RSS_API}&count=10`
+          `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@adarsh-gupta&api_key=hnzfdqelxnqgolluihzzdma4ot6xmskzdlf09uvq&count=10`
         )
         .then((res) => {
           setmediumdata(res.data);
