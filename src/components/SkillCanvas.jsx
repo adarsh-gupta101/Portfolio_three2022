@@ -17,7 +17,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x111827);
 // Texture
 const textureLoader = new THREE.TextureLoader();
-const normalTexture = textureLoader.load("src/assets/bil.png");
+const normalTexture = textureLoader.load("/assets/bil.png");
 
 // Objects
 const geometry = new THREE.BoxGeometry();

@@ -9,7 +9,7 @@ function App() {
   return (
     <div
       className='bg-gray-900 min-h-screen scroll-smooth'
-      style={{ fontFamily: "Poppins" }}>
+      style={{ fontFamily: "Poppins",overflowY:"hidden" }}>
       <Banner></Banner>
       <Works />
       <SkillCanvas />

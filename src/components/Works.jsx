@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import xri from "../assets/Clients/xri.jpg";
-import ma2grg from "../assets/Clients/ma2grg.jpg";
-import mages from "../assets/Clients/mages.jpg";
-import three from "../assets/Clients/three.jpg";
-import trend from "../assets/Clients/trend.jpg";
-import Victual from "../assets/Clients/victual.jpg";
+import xri from "/assets/Clients/xri.jpg";
+import ma2grg from "/assets/Clients/ma2grg.jpg";
+import mages from "/assets/Clients/mages.jpg";
+import three from "/assets/Clients/three.jpg";
+import trend from "/assets/Clients/trend.jpg";
+import Victual from "/assets/Clients/victual.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

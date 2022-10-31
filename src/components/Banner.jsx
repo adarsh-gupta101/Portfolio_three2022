@@ -27,7 +27,7 @@ window.addEventListener("mousemove", (event) => {
   mouse.y = -(event.clientY / window.innerHeight - 0.5);
 });
 
-const particleTexture = textureLoader.load("/src/assets/particles/9.png");
+const particleTexture = textureLoader.load("/assets/particles/9.png");
 
 // particles
 const particlesGeometry = new THREE.BufferGeometry();
