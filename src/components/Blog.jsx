@@ -73,11 +73,11 @@ function Blog() {
   return (
     <div>
       <section className='text-white '>
-        <h2 className='text-white text-7xl m-2 my-8 p-2'>Writings</h2>
+        <h2 className='text-white text-5xl font-bold md:text-7xl m-2 my-8 p-2'>Writings</h2>
         <article className='flex flex-wrap justify-around'>
           {dataForBlog.map((blog) => {
             return (
-              <div className='md:w-1/4 shadow-xl h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
+              <div className='w-11/12 md:w-1/4 shadow-xl h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
                 <a href={blog.link} target="_blank" rel="noreferrer">
                 <img src={blog.image} />
                 <p className='text-xl mt-4'>{blog.title}</p>
@@ -98,7 +98,7 @@ function Blog() {
           })}
         </article>
 
-        <p className="text-center border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-2xl shadow-blue-300">Check All of Adarsh Gupta's blog</p>
+        <a href="medium.com/@adarsh-gupta"><p className="text-center mt-28 border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-2xl shadow-blue-300">Check All of Adarsh Gupta's blog</p></a>
       </section>
     </div>
   );

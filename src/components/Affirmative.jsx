@@ -3,9 +3,9 @@ import React from "react";
 function Affirmative() {
   return (
     <div className="h-screen flex flex-col justify-center items-center text-white" >
-      <p className="text-7xl">Get in Touch</p>
+      <p className="text-5xl md:text-7xl">Get in Touch</p>
 
-      <p className="font-light w-1/2 my-8">
+      <p className="font-light w-3/4 md:w-1/2 my-8">
         {" "}
         Iam interested in doing new Freelance projects. I prefer having
         Long-term projects but yeah Iam open to all kind of works. Whether you
