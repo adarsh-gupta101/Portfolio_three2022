@@ -14,7 +14,7 @@ console.log(canvas);
 
 // Scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x111827);
+scene.background = new THREE.Color("#000");
 // Texture
 const textureLoader = new THREE.TextureLoader();
 const normalTexture = textureLoader.load("/assets/bil.png");

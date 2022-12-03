@@ -18,7 +18,24 @@ const dataForBlog = [
       "https://blog.talent500.co/wp-content/uploads/2022/10/Tips-to-style-tailwind-in-React.png",
     time: "14 mins read",
     link:"https://talent500.co/blog/how-to-style-using-tailwind-css-in-react/"
-  },{
+  },
+
+  {
+    title: "Migrating Test Automation Suite To Cypress 10 ",
+    description:
+      "There are times when developers get stuck with a problem that has to do with version changes. Trying to run the code or test without upgrading the package can result in unexpected errors...",
+    image:
+      "https://www.lambdatest.com/blog/wp-content/uploads/2022/12/Migrating-Test-Automation-Suite-To-Cypress.png",
+    time: "28 mins read",
+    link:"https://www.lambdatest.com/blog/cypress-10-migration/"
+  },
+  
+  
+  
+  
+  
+  {
+    
     title: "The Complete JavaScript Guide ",
     description:
       "JavaScript is a multi-paradigm, dynamic, high-level, loosely typed language. We use JavaScript to create...",
@@ -85,16 +102,16 @@ function Blog() {
 
         </h2>
         <article className='flex flex-wrap justify-around'>
-          {dataForBlog.map((blog) => {
+          {dataForBlog.map((blog,index) => {
             return (
-              <div className='w-11/12 md:w-1/4 shadow-xl h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
-                <a href={blog.link} target="_blank" rel="noreferrer">
+              <div key={index} className='rounded-lg w-11/12 md:w-1/4 shadow-sm h-fit shadow-blue-300 m-2 p-2 hover:shadow-lg hover:rotate-3 rotate-0 duration-100 ease-in-out hover:shadow-pink-300'>
                 <img src={blog.image} />
-                <p className='text-xl mt-4'>{blog.title}</p>
-                <p className='text-sm font-light'>{blog.description}</p>
+                <a href={blog.link} target="_blank" rel="noreferrer">
+    <p className='text-xl mt-4 text-blue-300 brightness-150'>{blog.title}</p>
+                <p className='text-sm font-light'>{blog.description}</p></a>
                 <div className='flex items-center mt-4'>
                   <img
-                    src='https://pbs.twimg.com/profile_images/1505853495941169152/Gd3D-b_u_400x400.jpg'
+                    src='https://pbs.twimg.com/profile_images/1592833764744273921/NINwbkaO_400x400.jpg'
                     className='rounded-full w-12 h-12 my-2'
                   />
                   <p className='mx-2 flex flex-col-reverse'>
@@ -102,13 +119,12 @@ function Blog() {
                     Adarsh Gupta
                   </p>
                 </div>
-                </a>
               </div>
             );
           })}
         </article>
 
-        <a href="https://medium.com/@adarsh-gupta"><p className="text-center mt-28 border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-2xl shadow-blue-300">Check All of Adarsh Gupta's blog</p></a>
+        <a href="https://medium.com/@adarsh-gupta"><p className="text-center mt-28 border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-sm  hover:shadow-pink-400 hover:shadow-xl shadow-blue-300">Check All of Adarsh Gupta's blog</p></a>
       </section>
     </div>
   );

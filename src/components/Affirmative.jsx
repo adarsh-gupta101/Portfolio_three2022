@@ -14,7 +14,7 @@ function Affirmative() {
       <a href="mailto:adarshofficalgupta@gmail.com">
 
       <button
-        className='text-pink-300 shadow-xl duration-75 ease-in-out hover:bg-white hover:text-black hover:shadow-pink-300 shadow-blue-300 border-2 rounded p-4 w-fit  '
+        className='text-pink-300 shadow-sm duration-75 ease-in-out hover:bg-white hover:text-black hover:shadow-pink-300 shadow-blue-300 border-2 rounded p-4 w-fit  '
         name='Say Hello to me'>
         Say Hello to Me
       </button>

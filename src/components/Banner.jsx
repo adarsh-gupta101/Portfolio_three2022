@@ -134,8 +134,8 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   //  particles cursor animation
-  particles.rotation.y = elapsedTime * 0.28 * mouse.x * mouse.y;
-  particles.rotation.x = elapsedTime * 0.28 * mouse.y * mouse.x;
+  particles.rotation.y = elapsedTime * 0.28 * mouse.y;
+  particles.rotation.x = elapsedTime * 0.28  * mouse.x;
   // particles.rotation.x = mouse.y
 
   particles.position.x = mouse.x - 0.5;
