@@ -14,11 +14,14 @@ function App() {
       style={{ fontFamily: "Poppins", overflowY: "hidden" }}>
       <Repulsion />
       {/* <Banner></Banner> */}
+
+
       <Works />
       <SkillCanvas />
       <Blog />
       <Findme />
       <Affirmative />
+      
     </div>
   );
 }

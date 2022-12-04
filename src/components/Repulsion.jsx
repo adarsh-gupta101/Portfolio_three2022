@@ -5,6 +5,7 @@ import { distance, radians, map } from "../utils/helpers";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from "gsap";
 import * as dat from "dat.gui"
+
 // Canvas
 let canvas;
 
@@ -405,7 +406,7 @@ function Repulsion() {
         className='webgl z-10   top-0 left-0 w-full h-full'
         ref={(mount) => (canvas = mount)}></canvas>
 
-      
+
       <div className='flex flex-col absolute w-full top-8 h-screen justify-center items-center   z-50'>
         <main className='text-3xl  md:text-7xl text-white font-semibold p-4 '>
          <p>I'm Adarsh Gupta,</p>
