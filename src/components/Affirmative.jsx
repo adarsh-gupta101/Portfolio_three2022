@@ -11,7 +11,7 @@ function Affirmative() {
         have a question or just want to say hi, I’ll try my best to get back to
         you!
       </p>{" "}
-      <a href="mailto:adarshofficalgupta@gmail.com">
+      <a href="mailto:adarshguptaworks@gmail.com">
 
       <button
         className='text-pink-300 shadow-sm duration-75 ease-in-out hover:bg-white hover:text-black hover:shadow-pink-300 shadow-blue-300 border-2 rounded p-4 w-fit  '
