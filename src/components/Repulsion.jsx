@@ -4,7 +4,6 @@ import { distance, radians, map } from "../utils/helpers";
 // oribital controls
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from "gsap";
-import * as dat from "dat.gui"
 
 // Canvas
 let canvas;
