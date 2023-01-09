@@ -4,11 +4,12 @@ import { distance, radians, map } from "../utils/helpers";
 // oribital controls
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from "gsap";
+import * as dat from 'dat.gui';
 
 // Canvas
 let canvas;
 
-// const gui=new dat.GUI()
+const gui = new dat.GUI();
 
 // Scene
 const scene = new THREE.Scene();
@@ -63,8 +64,8 @@ const getMesh = (geometry, material) => {
 
   return mesh;
 };
-const axesHelper = new THREE.AxesHelper();
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper();
+// scene.add(axesHelper);
 
 ///
 // // create a basic 3D object to be used as a container for our grid elements so we can move all of them together
@@ -161,33 +162,61 @@ window.addEventListener("mousemove", (event) => {
 //add a box
 const box = new THREE.Mesh(
   new THREE.BoxGeometry(1, 1, 1),
-  new THREE.MeshBasicMaterial({ color: "#ff0000" })
+  new THREE.MeshBasicMaterial({ color: "#ff00ff" })
 );
 // scene.add(box);
 // Lights
 
-const pointLight = new THREE.AmbientLight("#2900af", 0.9);
+const pointLight = new THREE.AmbientLight("#2900bf", 0.9);
 pointLight.position.x = 2;
 pointLight.position.y = 3;
 pointLight.position.z = 4;
 scene.add(pointLight);
 
 const spotLight2 = new THREE.SpotLight( 0xff00ff );
-spotLight2.position.set( 0, 20, 0 );
+spotLight2.position.set( 0, 0, 0 );
+// set mouse position as spotlight2 position
+spotLight2.position.x = mouse.x;
+spotLight2.position.y = mouse.y;
+spotLight2.position.z = 0;
+
+
 
 scene.add( spotLight2 );
 
 
 
-const SpotLight = new THREE.SpotLight("#e000ff", 1, 1000);
+const SpotLight = new THREE.SpotLight("red", 1, 1000);
 
 SpotLight.position.set(0, 27, 0);
-SpotLight.castShadow = true;
+// SpotLight.position.x = mouse.x;
+// SpotLight.position.y = mouse.y;
+// SpotLight.position.z = 0;
+// SpotLight.castShadow = true;
 
 scene.add(SpotLight);
 
-const Rectlight = new THREE.RectAreaLight("#0077ff", 1, 2000, 2000);
 
+const Rectlight = new THREE.RectAreaLight("yellow", 1, 2000, 2000);
+// change color every 30 seconds
+const changeColor = () => {
+  // Generate a random color
+  const color = new THREE.Color(Math.random(), Math.random(), Math.random());
+
+  // Set the color of the RectAreaLight
+  Rectlight.color.set(color);
+};
+
+// Call the changeColor function every 30 seconds
+setInterval(changeColor, 1000);
+
+// gui.add(Rectlight, "intensity", 0, 10, 0.01);
+// const colorController = gui.addColor(Rectlight, "color");
+
+// colorController.onChange(function(value) {
+//   // This function will be called every time the color is changed using the GUI
+//   Rectlight.color.set(value);
+// });
 Rectlight.position.set(5, 50, 50);
 Rectlight.lookAt(0, 0, 0);
 
@@ -402,11 +431,11 @@ function Repulsion() {
   return (
     <div className=' min-h-screen'>
       <canvas
-        className='webgl z-10   top-0 left-0 w-full h-full'
+        className='webgl z-0   top-0 left-0 w-full h-full'
         ref={(mount) => (canvas = mount)}></canvas>
 
 
-      <div className='flex flex-col absolute w-full top-8 h-screen justify-center items-center   z-50'>
+      <div className='flex flex-col absolute w-full top-8 h-screen justify-center items-center   z-0'>
         <main className='text-3xl  md:text-7xl text-white font-semibold p-4 '>
          <p>I'm Adarsh Gupta,</p>
           <p>Web & App Developer.</p> 
