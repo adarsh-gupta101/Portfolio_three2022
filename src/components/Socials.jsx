@@ -3,7 +3,7 @@ import Discord from "/assets/social/Discord.png";
 import Medium from "/assets/social/Medium.png";
 import Github from "/assets/social/GitHub.png";
 import Instagram from "/assets/social/Instagram.png";
-import Linkedin from "/assets/social/Linkedin.png";
+import Linkedin from "/assets/social/LinkedIn.png";
 import Twitter from "/assets/social/Twitter.png";
 import Youtube from "/assets/social/Youtube.png";
 
