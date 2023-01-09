@@ -1,6 +1,7 @@
 import React from "react";
 import Discord from "/assets/social/Discord.png";
-// import Github from "/assets/social/Github.png";
+import Medium from "/assets/social/Medium.png";
+import Github from "/assets/social/GitHub.png";
 import Instagram from "/assets/social/Instagram.png";
 import Linkedin from "/assets/social/Linkedin.png";
 import Twitter from "/assets/social/Twitter.png";
@@ -17,12 +18,20 @@ function Socials() {
       link: "https://www.instagram.com/developedbyadarsh",
     },
     {
+        image: Github,
+        link: "https://www.github.com/adarsh-gupta101"
+    },
+    {
       image: Linkedin,
       link: "https://www.linkedin.com/in/adarsh1gupta/",
     },
     {
       image: Twitter,
       link: "https://twitter.com/Adarsh____gupta/",
+    },
+    {
+      image: Medium,
+      link: "https://medium.com/@adarsh-gupta",
     },
     {
       image: Youtube,
