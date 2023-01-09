@@ -10,6 +10,11 @@ import Youtube from "/assets/social/Youtube.png";
 function Socials() {
   const data = [
     {
+      image: Github,
+      link: "https://www.github.com/adarsh-gupta101",
+      alt:`<a href="https://iconscout.com/3ds/github" target="_blank">GitHub 3D Illustration</a> by <a href="https://iconscout.com/contributors/iconscout" target="_blank">IconScout Store</a>`
+  },
+    {
       image: Discord,
       link: "https://discord.com/users/790832929663483916",
     },
@@ -17,10 +22,7 @@ function Socials() {
       image: Instagram,
       link: "https://www.instagram.com/developedbyadarsh",
     },
-    {
-        image: Github,
-        link: "https://www.github.com/adarsh-gupta101"
-    },
+  
     {
       image: Linkedin,
       link: "https://www.linkedin.com/in/adarsh1gupta/",
@@ -30,12 +32,12 @@ function Socials() {
       link: "https://twitter.com/Adarsh____gupta/",
     },
     {
-      image: Medium,
-      link: "https://medium.com/@adarsh-gupta",
-    },
-    {
       image: Youtube,
       link: "https://www.youtube.com/c/AdarshGuptaa/",
+    },
+    {
+      image: Medium,
+      link: "https://medium.com/@adarsh-gupta",
     },
   ];
   return (
@@ -72,8 +74,9 @@ function Socials() {
               <a href={item.link}>
                 <img
                   src={item.image}
-                  alt='social'
-                  className='w-36 h-36 m-2 p-2'
+
+                  alt={item.alt || "social"}
+                  className='w-36 h-36 m-2 p-2 object-contain'
                 />
               </a>
             </div>
