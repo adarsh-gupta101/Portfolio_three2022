@@ -6,6 +6,7 @@ import Works from "./components/Works";
 import SkillCanvas from "./components/SkillCanvas";
 import Findme from "./components/Findme";
 import Repulsion from "./components/Repulsion";
+import Socials from "./components/Socials";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
 
       <Works />
+      <Socials/>
       <SkillCanvas />
       <Blog />
       <Findme />
