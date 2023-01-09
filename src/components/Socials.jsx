@@ -65,7 +65,7 @@ function Socials() {
         </p>
       </h2>
 
-      <div className='mt-12 flex flex-wrap justify-center items-center h-96'>
+      <div className='mt-12 flex flex-wrap justify-center items-center min-h-96'>
         {data.map((item) => {
           return (
             <div className='hover:bg-white m-2 rounded shadow-lg shadow-pink-400 duration-300 hover:-mt-6'>
