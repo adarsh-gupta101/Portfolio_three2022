@@ -1,6 +1,6 @@
 import React from "react";
 import Discord from "/assets/social/Discord.png";
-import Medium from "/assets/social/Medium.png";
+import Medium from "/assets/social/Medium2.png";
 import Github from "/assets/social/GitHub.png";
 import Instagram from "/assets/social/Instagram.png";
 import Linkedin from "/assets/social/LinkedIn.png";
@@ -70,7 +70,7 @@ function Socials() {
       <div className='mt-12 flex flex-wrap justify-center items-center min-h-96'>
         {data.map((item) => {
           return (
-            <div className='hover:bg-white m-2 rounded shadow-lg shadow-pink-400 duration-300 hover:-mt-6'>
+            <div className='hover:bg-white m-2 rounded shadow-lg hover:shadow-blue-400 shadow-pink-400 duration-300 hover:-mt-6'>
               <a href={item.link}>
                 <img
                   src={item.image}
