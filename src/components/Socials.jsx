@@ -1,6 +1,6 @@
 import React from "react";
 import Discord from "/assets/social/Discord.png";
-import Medium from "/assets/social/Medium2.png";
+import Medium from "/assets/social/medium2.png";
 import Github from "/assets/social/GitHub.png";
 import Instagram from "/assets/social/Instagram.png";
 import Linkedin from "/assets/social/LinkedIn.png";
