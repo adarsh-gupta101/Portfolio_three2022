@@ -190,7 +190,7 @@ const dataForWork = [
     description:
       "Mathew is an engineer turned designer trying to bridge the gap between branding and interface design with 4 years of experience in digital design. He is also the co-founder of Mages Studio Pvt. Ltd.",
     image: ma2grg,
-    link: "https://www.ma2grg.com/",
+    link: "https://ma2grg.vercel.app/",
   },
   {
     title: "TrendOnline",
