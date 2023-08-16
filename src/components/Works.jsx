@@ -211,7 +211,7 @@ const dataForWork = [
     description:
       "Victual is a food delivery app that allows you to order food from your favorite restaurants and have it delivered to your doorstep.",
     image: Victual,
-    link: "https://www.victual.fr/",
+    link: "https://shef-client.vercel.app/",
   },
   {
     title: "Universe inside browser",
