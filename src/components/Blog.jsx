@@ -111,7 +111,7 @@ function Blog() {
                 <p className='text-sm font-light'>{blog.description}</p></a>
                 <div className='flex items-center mt-4'>
                   <img
-                    src='https://pbs.twimg.com/profile_images/1592833764744273921/NINwbkaO_400x400.jpg'
+                    src='https://pbs.twimg.com/profile_images/1669350664529670146/eVKk-xyU_400x400.jpg'
                     className='rounded-full w-12 h-12 my-2'
                   />
                   <p className='mx-2 flex flex-col-reverse'>

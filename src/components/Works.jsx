@@ -281,7 +281,7 @@ function Works() {
           opportunities. If you have any project in mind, feel free to contact
           me.
         </p>
-        <article className='grid md:grid-cols-3 m-1 gap-4'>
+        <article className='grid md:grid-cols-3 m-2 p-4 gap-4'>
           {dataForWork.map((Work,index) => {
             return (
               <div key={index}

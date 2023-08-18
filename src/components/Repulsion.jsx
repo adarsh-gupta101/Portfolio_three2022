@@ -4,7 +4,7 @@ import { distance, radians, map } from "../utils/helpers";
 // oribital controls
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import gsap from "gsap";
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 
 // Canvas
 let canvas;
@@ -20,36 +20,45 @@ const normalTexture = textureLoader.load("/assets/bil.png");
 // Geometries
 
 const Box = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-Box.rotateX=0
-Box.rotateY=0
-Box.rotateZ=0
-const Cone = new THREE.ConeGeometry(.3, .5,32);
-Cone.rotateX=0;
-Cone.rotateY=0;
-Cone.rotateZ=radians(-180);
-const Torus = new THREE.TorusGeometry(.3,.12,30,200);
-Torus.rotateX=radians(90);
-Torus.rotateY=radians(0);
-Torus.rotateZ=radians(0);
-const Capsule=new THREE.CapsuleGeometry(.3,.3,32);
-const DodecahedronGeometry=new THREE.DodecahedronGeometry(.3,0);
+Box.rotateX = 0;
+Box.rotateY = 0;
+Box.rotateZ = 0;
+const Cone = new THREE.ConeGeometry(0.3, 0.5, 32);
+Cone.rotateX = 0;
+Cone.rotateY = 0;
+Cone.rotateZ = radians(-180);
+const Torus = new THREE.TorusGeometry(0.3, 0.12, 30, 200);
+Torus.rotateX = radians(90);
+Torus.rotateY = radians(0);
+Torus.rotateZ = radians(0);
+const Capsule = new THREE.CapsuleGeometry(0.3, 0.3, 32);
+const DodecahedronGeometry = new THREE.DodecahedronGeometry(0.35, 0);
 const IcosohedronGeometry = new THREE.IcosahedronGeometry(0.3, 0);
 const OctahedronGeometry = new THREE.OctahedronGeometry(0.3, 0);
 const TetrahedronGeometry = new THREE.TetrahedronGeometry(0.3, 0);
 const TorusKnotGeometry = new THREE.TorusKnotGeometry(0.3, 0.1, 100, 16);
 
-
-
 // scene.add(new THREE.Mesh(Box, new THREE.MeshBasicMaterial({ color: "#ff0000" })));
 
 //ray caster
 let raycaster = new THREE.Raycaster();
-console.log(raycaster)
-const gutter = { size: 1.4 };
+console.log(raycaster);
+const gutter = { size: 1.8 };
 const meshes = [];
 const repulsion = 1;
-const grid = { cols: 20, rows: 12 };
-const geometries = [Box, Cone, Torus, Capsule, DodecahedronGeometry, IcosohedronGeometry, OctahedronGeometry, TetrahedronGeometry, TorusKnotGeometry];
+const grid = { cols: 20, rows: 20 };
+const geometries = [
+  Box,
+  Cone,
+  Torus,
+  Capsule,
+  DodecahedronGeometry,
+  IcosohedronGeometry,
+  OctahedronGeometry,
+  TetrahedronGeometry,
+  TorusKnotGeometry,
+  OctahedronGeometry,
+];
 
 const getRandomGeometry = () => {
   return geometries[Math.floor(Math.random() * Math.floor(geometries.length))];
@@ -58,7 +67,7 @@ const getRandomGeometry = () => {
 // console.log(getRandomGeometry())
 const getMesh = (geometry, material) => {
   const mesh = new THREE.Mesh(geometry, material);
-  //   scene.add(mesh);
+  // scene.add(mesh);
   mesh.castShadow = true;
   mesh.receiveShadow = true;
 
@@ -73,10 +82,10 @@ let groupMesh = new THREE.Group();
 // console.log(groupMesh)
 
 const meshParams = {
-  color: "#ff00ff",
-  metalness: 0.58,
-  emissive: "#000000",
-  roughness: 0.18,
+  color: "#60A5FA",
+  metalness: 0.8,
+  emissive: "rgb(15,15,95)",
+  roughness: 0.28,
 };
 // // we create our material outside the loop to keep it more performant
 const material = new THREE.MeshPhysicalMaterial(meshParams);
@@ -155,8 +164,8 @@ scene.add(groupMesh);
 
 const mouse = new THREE.Vector2();
 window.addEventListener("mousemove", (event) => {
-  mouse.x = event.clientX / window.innerWidth *2- 1;
-  mouse.y = -(event.clientY / window.innerHeight )*2+1;
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 });
 
 //add a box
@@ -167,24 +176,20 @@ const box = new THREE.Mesh(
 // scene.add(box);
 // Lights
 
-const pointLight = new THREE.AmbientLight("#2900bf", 0.9);
+const pointLight = new THREE.AmbientLight("pink", 0.9);
 pointLight.position.x = 2;
 pointLight.position.y = 3;
 pointLight.position.z = 4;
 scene.add(pointLight);
 
-const spotLight2 = new THREE.SpotLight( 0xff00ff );
-spotLight2.position.set( 0, 0, 0 );
+const spotLight2 = new THREE.SpotLight(0xffffff, 1);
+spotLight2.position.set(0, 0, 0);
 // set mouse position as spotlight2 position
 spotLight2.position.x = mouse.x;
 spotLight2.position.y = mouse.y;
 spotLight2.position.z = 0;
 
-
-
-scene.add( spotLight2 );
-
-
+scene.add(spotLight2);
 
 const SpotLight = new THREE.SpotLight("red", 1, 1000);
 
@@ -196,15 +201,14 @@ SpotLight.position.set(0, 27, 0);
 
 scene.add(SpotLight);
 
-
-const Rectlight = new THREE.RectAreaLight("yellow", 1, 2000, 2000);
+const Rectlight = new THREE.RectAreaLight("yellow", 1, 1000, 2000);
 // change color every 30 seconds
 const changeColor = () => {
   // Generate a random color
   const color = new THREE.Color(Math.random(), Math.random(), Math.random());
 
   // Set the color of the RectAreaLight
-  Rectlight.color.set(color);
+  Rectlight.color.set(color.r, color.g, color.b);
 };
 
 // Call the changeColor function every 30 seconds
@@ -217,7 +221,7 @@ setInterval(changeColor, 1000);
 //   // This function will be called every time the color is changed using the GUI
 //   Rectlight.color.set(value);
 // });
-Rectlight.position.set(5, 50, 50);
+Rectlight.position.set(5, 5, 50);
 Rectlight.lookAt(0, 0, 0);
 
 scene.add(Rectlight);
@@ -259,18 +263,20 @@ window.addEventListener("resize", () => {
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(30, sizes.width / sizes.height, 1,100);
-camera.position.x = 20;
-camera.position.y = 20;
+const camera = new THREE.PerspectiveCamera(
+  40,
+  sizes.width / sizes.height,
+  10,
+  100
+);
+camera.position.x = 40;
+camera.position.y = 25;
 camera.position.z = 32;
-camera.rotateX = 40;
-
-
-
+camera.rotateX = 80;
+camera.rotateY = 0;
+camera.rotateZ = 100;
 
 //add camera rotation to dat gui
-
-
 
 scene.add(camera);
 
@@ -284,54 +290,54 @@ renderer.setSize(sizes.width, sizes.height);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 4));
 
 // Controls
 let controls;
+// controls = new OrbitControls(camera, canvas);
 /**
  * Animate
  */
 
+const particleTexture = textureLoader.load("/assets/particles/4.png");
 
- const particleTexture = textureLoader.load("/assets/particles/9.png");
+// particles
+const particlesGeometry = new THREE.BufferGeometry();
+const count = 4100;
 
- // particles
- const particlesGeometry = new THREE.BufferGeometry();
- const count = 5000;
- 
- const positions = new Float32Array(count * 3);
- const colors = new Float32Array(count * 3);
- 
- for (let i = 0; i < count * 3; i++) {
-   positions[i] = (Math.random() - 0.5) * 100;
-   colors[i] = Math.random();
- }
- 
- particlesGeometry.setAttribute(
-   "position",
-   new THREE.BufferAttribute(positions, 3)
- );
- particlesGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
- // Material
- const particlesMaterial = new THREE.PointsMaterial();
- 
- particlesMaterial.size = 0.3;
- particlesMaterial.sizeAttenuation = true;
- 
- particlesMaterial.color = new THREE.Color("#ff88cc");
- 
- particlesMaterial.transparent = true;
- particlesMaterial.alphaMap = particleTexture;
- // particlesMaterial.alphaTest = 0.01
- // particlesMaterial.depthTest = false
- particlesMaterial.depthWrite = false;
- particlesMaterial.blending = THREE.AdditiveBlending;
- 
- particlesMaterial.vertexColors = true;
- 
- // Points
- const particles = new THREE.Points(particlesGeometry, particlesMaterial);
- scene.add(particles);
+const positions = new Float32Array(count * 3);
+const colors = new Float32Array(count * 3);
+
+for (let i = 0; i < count * 3; i++) {
+  positions[i] = (Math.random() - 0.5) * 100;
+  colors[i] = Math.random();
+}
+
+particlesGeometry.setAttribute(
+  "position",
+  new THREE.BufferAttribute(positions, 3)
+);
+particlesGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+// Material
+const particlesMaterial = new THREE.PointsMaterial();
+
+particlesMaterial.size = 0.9;
+particlesMaterial.sizeAttenuation = true;
+
+particlesMaterial.color = new THREE.Color("#ff88cc");
+
+particlesMaterial.transparent = true;
+particlesMaterial.alphaMap = particleTexture;
+particlesMaterial.alphaTest = 0.01;
+particlesMaterial.depthTest = false;
+particlesMaterial.depthWrite = false;
+particlesMaterial.blending = THREE.AdditiveBlending;
+
+particlesMaterial.vertexColors = true;
+
+// Points
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particles);
 
 const clock = new THREE.Clock();
 
@@ -341,16 +347,16 @@ const tick = () => {
   raycaster.setFromCamera(mouse, camera);
 
   const intersects = raycaster.intersectObjects([floorMesh]);
-//   console.log(intersects)
+  //   console.log(intersects)
 
-particles.rotation.y = elapsedTime * 0.28 * mouse.y;
-particles.rotation.x = elapsedTime * 0.28  * mouse.x;
-// particles.rotation.x = mouse.y
+  particles.rotation.y = elapsedTime * 0.28 * mouse.y;
+  particles.rotation.x = elapsedTime * 0.28 * mouse.x;
+  // particles.rotation.x = mouse.y
 
-spotLight2.position.x=mouse.x
+  spotLight2.position.x = mouse.x;
 
-particles.position.x = mouse.x - 0.5;
-particles.position.y = mouse.y - 0.5;
+  particles.position.x = mouse.x - 0.5;
+  particles.position.y = mouse.y - 0.5;
   if (intersects.length > 0) {
     // alert("sex")
     const { x, z } = intersects[0].point;
@@ -395,18 +401,24 @@ particles.position.y = mouse.y - 0.5;
           })
           .duration(0.4);
 
-
-
-          gsap.to(mesh.rotation,  {
+        gsap
+          .to(mesh.rotation, {
             ease: Back.easeOut.config(1.7),
             x: map(mesh.position.y, -1, 1, radians(45), mesh.initialRotation.x),
-            z: map(mesh.position.y, -1, 1, radians(-90), mesh.initialRotation.z),
+            z: map(
+              mesh.position.y,
+              -1,
+              1,
+              radians(-90),
+              mesh.initialRotation.z
+            ),
             y: map(mesh.position.y, -1, 1, radians(90), mesh.initialRotation.y),
-          }).duration(0.7);
+          })
+          .duration(0.7);
       }
     }
   }
-  controls?.update()
+  controls?.update();
 
   renderer.render(scene, camera);
 
@@ -415,6 +427,62 @@ particles.position.y = mouse.y - 0.5;
 };
 
 tick();
+
+// add gui for everything
+const guis = new dat.GUI();
+guis.closed = true;
+const cameraFolder = guis.addFolder("Camera");
+cameraFolder.add(camera.position, "x").min(-100).max(100).step(0.01);
+cameraFolder.add(camera.position, "y").min(-100).max(100).step(0.01);
+cameraFolder.add(camera.position, "z").min(-100).max(100).step(0.01);
+cameraFolder.add(camera.rotation, "x").min(-100).max(100).step(0.01);
+cameraFolder.add(camera.rotation, "y").min(-100).max(100).step(0.01);
+cameraFolder.add(camera.rotation, "z").min(-100).max(100).step(0.01);
+const lightFolder = guis.addFolder("Light");
+lightFolder.add(SpotLight.position, "x").min(-100).max(100).step(0.01);
+lightFolder.add(SpotLight.position, "y").min(-100).max(100).step(0.01);
+lightFolder.add(SpotLight.position, "z").min(-100).max(100).step(0.01);
+lightFolder.add(SpotLight.rotation, "x").min(-100).max(100).step(0.01);
+lightFolder.add(SpotLight.rotation, "y").min(-100).max(100).step(0.01);
+lightFolder.add(SpotLight.rotation, "z").min(-100).max(100).step(0.01);
+const meshFolder = guis.addFolder("Mesh");
+meshFolder.add(groupMesh.position, "x").min(-100).max(100).step(0.01);
+meshFolder.add(groupMesh.position, "y").min(-100).max(100).step(0.01);
+meshFolder.add(groupMesh.position, "z").min(-100).max(100).step(0.01);
+meshFolder.add(groupMesh.rotation, "x").min(-100).max(100).step(0.01);
+meshFolder.add(groupMesh.rotation, "y").min(-100).max(100).step(0.01);
+meshFolder.add(groupMesh.rotation, "z").min(-100).max(100).step(0.01);
+const spotLightFolder = guis.addFolder("SpotLight");
+spotLightFolder.add(spotLight2.position, "x").min(-100).max(100).step(0.01);
+spotLightFolder.add(spotLight2.position, "y").min(-100).max(100).step(0.01);
+spotLightFolder.add(spotLight2.position, "z").min(-100).max(100).step(0.01);
+spotLightFolder.add(spotLight2.rotation, "x").min(-100).max(100).step(0.01);
+spotLightFolder.add(spotLight2.rotation, "y").min(-100).max(100).step(0.01);
+spotLightFolder.add(spotLight2.rotation, "z").min(-100).max(100).step(0.01);
+const rectLightFolder = guis.addFolder("RectLight");
+rectLightFolder.add(Rectlight.position, "x").min(-100).max(100).step(0.01);
+rectLightFolder.add(Rectlight.position, "y").min(-100).max(100).step(0.01);
+rectLightFolder.add(Rectlight.position, "z").min(-100).max(100).step(0.01);
+rectLightFolder.add(Rectlight.rotation, "x").min(-100).max(100).step(0.01);
+rectLightFolder.add(Rectlight.rotation, "y").min(-100).max(100).step(0.01);
+rectLightFolder.add(Rectlight.rotation, "z").min(-100).max(100).step(0.01);
+const particleFolder = guis.addFolder("Particles");
+particleFolder.add(particles.position, "x").min(-100).max(100).step(0.01);
+particleFolder.add(particles.position, "y").min(-100).max(100).step(0.01);
+particleFolder.add(particles.position, "z").min(-100).max(100).step(0.01);
+particleFolder.add(particles.rotation, "x").min(-100).max(100).step(0.01);
+particleFolder.add(particles.rotation, "y").min(-100).max(100).step(0.01);
+particleFolder.add(particles.rotation, "z").min(-100).max(100).step(0.01);
+const floorFolder = guis.addFolder("Floor");
+floorFolder.add(floorMesh.position, "x").min(-100).max(100).step(0.01);
+floorFolder.add(floorMesh.position, "y").min(-100).max(100).step(0.01);
+
+floorFolder.add(floorMesh.position, "z").min(-100).max(100).step(0.01);
+floorFolder.add(floorMesh.rotation, "x").min(-100).max(100).step(0.01);
+floorFolder.add(floorMesh.rotation, "y").min(-100).max(100).step(0.01);
+
+floorFolder.add(floorMesh.rotation, "z").min(-100).max(100).step(0.01);
+const boxFolder = guis.addFolder("Box");
 
 function Repulsion() {
   useEffect(() => {
@@ -429,22 +497,21 @@ function Repulsion() {
     // controls.enabled = false;
   });
   return (
-    <div className=' min-h-screen'>
+    <div className=" min-h-screen">
       <canvas
-        className='webgl z-0   top-0 left-0 w-full h-full'
-        ref={(mount) => (canvas = mount)}></canvas>
+        className="webgl z-0   top-0 left-0 w-full h-full"
+        ref={(mount) => (canvas = mount)}
+      ></canvas>
 
-
-      <div className='flex flex-col absolute w-full top-8 h-screen justify-center items-center   z-0'>
-        <main className='text-3xl  md:text-7xl text-white font-semibold p-4 '>
-         <p>I'm Adarsh Gupta,</p>
-          <p>Web & App Developer.</p> 
+      <div className="flex flex-col absolute w-full top-8 h-screen justify-center items-center   z-0">
+        <main className="text-3xl  md:text-7xl text-white font-semibold p-4 ">
+          <p>I'm Adarsh Gupta,</p>
+          <p>Web & App Developer.</p>
         </main>
-        <p className='text-gray-200 text-2xl p-4'>
-          Full Stack JavaScript Developer 
+        <p className="text-gray-200 text-2xl p-4">
+          Full Stack JavaScript Developer
         </p>
-      </div> 
-   
+      </div>
     </div>
   );
 }

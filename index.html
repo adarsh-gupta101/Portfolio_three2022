@@ -11,19 +11,26 @@
         cursor: url("https://raw.githubusercontent.com/adarshgupta2000/adarshgupta2000/main/cursor.png"), auto;
       }
       ::-webkit-scrollbar {
-        width: 0.5rem;
+        width: 0.8rem;
         background-color: rgb(17 24 39);
+        margin: 5px;
       }
       ::-webkit-scrollbar-track {
         background: rgb(5, 197, 255);
       }
       ::-webkit-scrollbar-thumb {
-        background: rgb(255, 255, 255);
+        background: rgb(243, 24, 203);
+        border-radius: 10%;
       }
 
       /* Handle on hover */
       ::-webkit-scrollbar-thumb:hover {
         background: #555;
+      }
+
+      /* hide horizontal scroollbar */
+      html {
+        overflow-x: hidden;
       }
 
       .cursor {
