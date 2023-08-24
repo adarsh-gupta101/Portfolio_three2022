@@ -7,6 +7,8 @@ import SkillCanvas from "./components/SkillCanvas";
 import Findme from "./components/Findme";
 import Repulsion from "./components/Repulsion";
 import Socials from "./components/Socials";
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
       <Blog />
       <Findme />
       <Affirmative />
+
+      <Analytics />
+
       
     </div>
   );

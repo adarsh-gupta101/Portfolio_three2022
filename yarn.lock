@@ -2162,6 +2162,11 @@
     "@typescript-eslint/types" "5.41.0"
     eslint-visitor-keys "^3.3.0"
 
+"@vercel/analytics@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@vercel/analytics/-/analytics-1.0.2.tgz"
+  integrity sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==
+
 "@vitejs/plugin-react@^2.2.0":
   version "2.2.0"
   resolved "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-2.2.0.tgz"
