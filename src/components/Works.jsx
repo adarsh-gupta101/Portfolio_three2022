@@ -183,7 +183,7 @@ const dataForWork = [
     description:
       "Mages Studio is an India-based design agency that has clients around the globe. Their creative minds unite to churn out designs that are the perfect amalgamation of class and allure leaving our clients wanting more.",
     image: mages,
-    link: "https://www.mages.studio/",
+    link: "https://dub.sh/mages-studio",
   },
   {
     title: "Mathew George's Portfolio",
