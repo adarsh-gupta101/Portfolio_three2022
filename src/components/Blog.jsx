@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const dataForBlog = [
   {
     title: "How To Style And Write CSS In React",
@@ -124,7 +125,7 @@ function Blog() {
           })}
         </article>
 
-        <a href="https://medium.com/@adarsh-gupta"><p className="text-center mt-28 border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-sm  hover:shadow-pink-400 hover:shadow-xl shadow-blue-300">Check All of Adarsh Gupta's blog</p></a>
+        <Link to="/blogs"><p className="text-center mt-28 border-2 border-pink-300 w-fit m-auto p-4 rounded-xl shadow-sm  hover:shadow-pink-400 hover:shadow-xl shadow-blue-300">Check All of Adarsh Gupta's blog</p></Link>
       </section>
     </div>
   );
